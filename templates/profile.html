@@ -1,0 +1,39 @@
+{% extends 'layout.html' %} {% block title %}
+<h1>Home</h1>{% endblock %} {% block content %}
+<div class="container">
+    <div class="col-md-8">
+        <h3>Welcome, {{email}}</h3>
+    </div>
+    <div class="col-md-4 text-right">
+        <a href="{{url_for('home')}}">Home</a>   
+    </div>  <div class="col-md-4 text-right">
+        <a href="{{url_for('profile')}}">Account</a>   
+    </div> <div class="col-md-4 text-right">
+        <a href="{{url_for('logout')}}">logout</a>
+    </div>
+</div><!-- /container -->
+<hr />
+<link rel="stylesheet" href="{{ url_for('static', filename='card.css') }}">
+
+<body>
+    <div>
+        <h1>Account Settings</h1>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('profileupdate')}}" method="post">
+            <input type="text" name="email" placeholder="Email" required="required" readonly="readonly" value="{{email}}"/><br>
+            <input type="text" name="name" placeholder="John Does" required="required" value="{{name}}"/><br>
+            <input type="text" name="phone" placeholder="+254700000000" required="required" value="{{phone}}"/><br> 
+
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Update Changes</button>
+        </form>
+
+        <br>
+        <br>
+ 
+    </div>
+
+
+</body>
+{% endblock %}

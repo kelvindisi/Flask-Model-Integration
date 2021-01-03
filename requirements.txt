@@ -1,0 +1,6 @@
+Flask==1.0.2
+Flask-MySQL==1.4.0
+PyJWT==1.6.4
+gunicorn==19.9.0 
+scikit_learn==0.22.2.post1
+# if the above fails please run pip install "scikit_learn==0.22.2.post1"
