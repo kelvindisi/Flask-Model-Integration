@@ -7,6 +7,6 @@
 
 
 2. On to the CMD Run: 
-                a)  Python setup.py
-                b)  Python app.py
+a)  `Python setup.py`
+b)  `Python app.py`
 #
