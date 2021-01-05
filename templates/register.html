@@ -1,19 +1,72 @@
-{% extends 'layout.html' %} {% block title %}
-<h1>Register</h1>{% endblock %} {% block content %}
-<div class="container">
-    <div class="card card-container">
-        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-        <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" method="post">
-            <span id="reauth-email" class="reauth-email"></span>
-            <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required> 
-            <input type="text" name="phone" id="inputPhone" class="form-control" placeholder="+254700000000" required> 
-            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <input type="password" name="confirm" id="inputConfirmPassword" class="form-control" placeholder="Confirm password" required>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Create account</button>
-            <a class="forgot-password" href="{{url_for('login')}}">already have an account? login here!</a>
-        </form><!-- /form -->
-    </div><!-- /card-container -->
-</div><!-- /container -->
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form action="" method="post" class="authForm mt-2">
+        <div class="form-section text-center p-2">
+            <img src="/static/login_green_user.png" class="login_icon" alt="Login User">
+            <p class="h4 fw-bold">Create Account</p>
+        </div>
+        <div class="form-section p-3">
+            <div class="mb-2">
+                <label for="name" class="fw-bold">Name</label>
+                <input type="text" name="name" id="name" required="required"
+                      placeholder="John Doe" class="form-control">
+            </div>
+            <div class="mb-2">
+                <label for="phone" class="fw-bold">Phone</label>
+                <input type="tel" name="phone" id="phone" required="required"
+                      placeholder="+254719600471" class="form-control">
+            </div>
+            <div class="mb-2">
+                <label for="email" class="fw-bold">Email</label>
+                <input type="email" name="email" id="email" required="required"
+                       placeholder="someone@domain.com" class="form-control">
+            </div>
+            <div class="mb-2">
+                <label for="password" class="fw-bold">Password</label>
+                <input type="password" name="password" id="password" required="required"
+                      placeholder="123@Pass@" class="form-control">
+            </div>
+            <div class="mb-2">
+                <label for="password-confirm" class="fw-bold">Password Confirm</label>
+                <input type="password" name="confirm" id="password-confirm" required="required"
+                      placeholder="123@Pass@" class="form-control">
+            </div>
+        </div>
+        <div class="form-submit-section">
+            <div class="row">
+                <div class="mb-2 d-grid">
+                    <button type="submit" class="btn btn-block btn-success btn-lg">Create Account</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col text-center">
+            <p>
+                <span>Already have Account? </span>
+                <a href="{{url_for('login')}}" class="btn btn-link-no-dec p-none">Login</a>
+            </p>
+        </div>
+    </div>
 {% endblock %}
+
+{#{% extends 'layout.html' %} {% block title %}#}
+{#<h1>Register</h1>{% endblock %} {% block content %}#}
+{#<div class="container">#}
+{#    <div class="card card-container">#}
+{#        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />#}
+{#        <p id="profile-name" class="profile-name-card"></p>#}
+{#        <form class="form-signin" method="post">#}
+{#            <span id="reauth-email" class="reauth-email"></span>#}
+{#            <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required> #}
+{#            <input type="text" name="phone" id="inputPhone" class="form-control" placeholder="+254700000000" required> #}
+{#            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required>#}
+{#            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>#}
+{#            <input type="password" name="confirm" id="inputConfirmPassword" class="form-control" placeholder="Confirm password" required>#}
+{#            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Create account</button>#}
+{#            <a class="forgot-password" href="{{url_for('login')}}">already have an account? login here!</a>#}
+{#        </form><!-- /form -->#}
+{#    </div><!-- /card-container -->#}
+{#</div><!-- /container -->#}
+{#{% endblock %}#}

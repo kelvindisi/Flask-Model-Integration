@@ -1,0 +1,39 @@
+$theme_color: red;
+$background_theme: #fbfbfb;
+
+body {
+  background-color: $background_theme;
+}
+.btn-link-no-dec {
+  border-bottom: 1px solid deepskyblue;
+  color: deepskyblue !important;
+  font-weight: bold;
+  font-size: small;
+  border-radius: 0;
+}
+.authForm {
+  border: 1px solid #d0dada;
+  border-radius: 4px;
+  background: #ffffff;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.login_icon {
+  max-width: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.form-section {
+    border-bottom: 1px solid gainsboro;
+    box-shadow: 0 1px 0 0 white inset, 0 18px 18px -18px #efefef inset;
+    padding: 1px 20px 20px 20px;
+    position: relative;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+    min-height: 140px;
+}
+.form-submit-section {
+  background: linear-gradient(to bottom, rgba(248,248,248,1) 0%, rgba(229,229,229,1) 100%);
+  padding: 8px 20px;
+}

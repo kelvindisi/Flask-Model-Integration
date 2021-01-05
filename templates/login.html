@@ -1,16 +1,53 @@
-{% extends 'layout.html' %} {% block title %}
-<h1>Login</h1>{% endblock %} {% block content %}
-<div class="container">
-    <div class="card card-container">
-        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-        <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" method="post">
-            <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-            <a class="text-center" href="{{url_for('register')}}">new user? Register here!</a>
-        </form><!-- /form -->
-    </div><!-- /card-container -->
-</div><!-- /container -->
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form action="" method="post" class="authForm mt-3" >
+        <div class="form-section text-center p-2">
+            <img src="/static/login_green_user.png" class="login_icon" alt="Login User">
+            <p class="h2 fw-bold">Login</p>
+        </div>
+        <div class="form-section p-3">
+            <div class="mb-2">
+                <label for="email" class="fw-bold">Email</label>
+                <input type="email" name="email" id="email" placeholder="someone@domain.com"
+                       required="required" class="form-control p-2">
+            </div>
+            <div class="mb-2">
+                <label for="password" class="fw-bold">Password</label>
+                <input type="password" name="password" id="password" class="form-control p-2"
+                      required="required" placeholder="123@Pass">
+            </div>
+        </div>
+        <div class="form-submit-section">
+            <div class="row">
+                <div class="mb-2 d-grid">
+                    <button type="submit" class="btn btn-block btn-success btn-lg">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-12 text-center mt-2">
+            <p>
+                <span class="text-muted">New User?</span>
+                <a href="{{url_for('register')}}" class="btn btn-link-no-dec p-0">Create Account</a>
+            </p>
+        </div>
+    </div>
 {% endblock %}
+{#{% extends 'layout.html' %} {% block title %}#}
+{#<h1>Login</h1>{% endblock %} {% block content %}#}
+{#<div class="container">#}
+{#    <div class="card card-container">#}
+{#        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />#}
+{#        <p id="profile-name" class="profile-name-card"></p>#}
+{#        <form class="form-signin" method="post">#}
+{#            <span id="reauth-email" class="reauth-email"></span>#}
+{#            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>#}
+{#            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>#}
+{#            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>#}
+{#            <a class="text-center" href="{{url_for('register')}}">new user? Register here!</a>#}
+{#        </form><!-- /form -->#}
+{#    </div><!-- /card-container -->#}
+{#</div><!-- /container -->#}
+{#{% endblock %}#}
