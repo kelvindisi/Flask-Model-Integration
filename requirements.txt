@@ -1,6 +1,14 @@
+click==7.1.2
 Flask==1.0.2
 Flask-MySQL==1.4.0
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.11.2
+joblib==1.0.0
+MarkupSafe==1.1.1
+numpy==1.19.4
 PyJWT==1.6.4
-gunicorn==19.9.0 
-scikit_learn==0.22.2.post1
-# if the above fails please run pip install "scikit_learn==0.22.2.post1"
+PyMySQL==0.10.1
+scikit-learn==0.22.2.post1
+scipy==1.6.0
+Werkzeug==1.0.1
