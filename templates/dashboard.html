@@ -1,19 +1,78 @@
 <div class="container">
-    <div class="col-md-4 text-right">
-        <a href="{{url_for('home')}}">Home</a>   
-    </div>  <div class="col-md-4 text-right">
-        <a href="{{url_for('profile')}}">Account</a>   
-    </div> 
-    <div class="col-md-8">
-        <h3>Welcome, {{name}}</h3>
+    <div class="text-muted mt-3">
+        Welcome, <span class="fw-bold">{{ name }}</span>
     </div>
-    <div class="col-md-4 text-right">
-        <a href="{{url_for('logout')}}">logout</a>
+    <div class="row row-cols-1 row-cols-md-2 mt-2 g-5 dashboard">
+        <div class="col">
+            <a href="{{ url_for('predpred') }}">
+                <div class="card">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="/static/predict.jpg" class="img-fluid" alt="Predict">
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="card-title">Predict</h5>
+                                <div class="card-text">Predict the yields profit</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="{{ url_for('history') }}">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/static/history.jpg" class="img-fluid" alt="Search History">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title">History</h5>
+                                <div class="card-text">Preview your history searches</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="{{ url_for('profile') }}">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/static/profile.jpg" class="img-fluid" alt="Profile Image">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title">Profile</h5>
+                                <div class="card-text">View your details and update if changes are required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="{{ url_for('logout') }}">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/static/logout.png" alt="Logout User" class="img-fluid">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title">Exit</h5>
+                                <div class="card-text">End session to exit the application</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
-    <a href="{{url_for('predpred')}}">   <button class="btn btn-lg btn-primary btn-block btn-signin" >Predict
-    </button></a>
-    <BR>
-    </BR>
-        <a href="{{url_for('history')}}">   <button class="btn btn-lg btn-primary btn-block btn-signin" >History
-    </button></a>
-</div><!-- /container -->
+</div>

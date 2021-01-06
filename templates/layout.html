@@ -18,10 +18,10 @@
 
   <body>
   {% block navigation %}{% endblock %}
-    <div class="container text-center">
+    <div class="container mt-1 text-center">
       {% with messages = get_flashed_messages() %}
           {% if messages %}
-              <ul class="col-md-offset-4 col-md-4 alert alert-info" style="list-style-type: none !important">
+              <ul class="col-md-offset-4 align-form-center col-md-4 alert alert-info" style="list-style-type: none !important">
                 {% for message in messages %}
                 <li>{{ message }}</li>
                 {% endfor %}
