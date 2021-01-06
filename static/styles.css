@@ -40,4 +40,26 @@ body {
   padding: 8px 20px;
 }
 
+.predictionForm {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+}
+
+.title-list span {
+  border-right: 1px solid #d6d4d4;
+  margin-left: 5px;
+}
+
+.medium-form {
+  max-width: 500px;
+  background-color: white;
+  padding: 20px;
+}
+
+.align-form-center {
+  margin: 0 auto;
+}
+
 /*# sourceMappingURL=styles.css.map */

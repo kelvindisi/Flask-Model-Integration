@@ -1,30 +1,45 @@
-{% extends 'layout.html' %} {% block title %}
-<h1>Home</h1>{% endblock %} {% block content %}
-<div class="container">
-    <div class="col-md-8">
-        <h3>Welcome, {{name}}</h3>
-    </div>
-    <div class="col-md-4 text-right">
-        <a href="{{url_for('home')}}">Home</a>   
-    </div>  <div class="col-md-4 text-right">
-        <a href="{{url_for('profile')}}">Account</a>   
-    </div> <div class="col-md-4 text-right">
-        <a href="{{url_for('logout')}}">logout</a>
-    </div>
-</div><!-- /container -->
-<hr />
-<link rel="stylesheet" href="{{ url_for('static', filename='card.css') }}">
+{% extends 'logged_user_layout.html' %}
 
-<body>
-    <div>
-        <h1>This is where i will show everything about History</h1>
-
-        <br>
-        <br>
-
-         
-    </div>
-
-
-</body>
+{% block optionalStyle %}
+    <link rel="stylesheet" href="/static/navigation_body.css">
 {% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <div class="title-list d-flex">
+                    <span>JR - July Rain</span>
+                    <span>AT - August Temp</span>
+                    <span>SMT - September Minimum Temperature</span>
+                    <span>OSH - October Sunshine Hours</span>
+                    <span>NRH - November Relative Humidity</span>
+                    <span>EW - Excess Water</span>
+                    <span>Ev - Evasportanspiration</span>
+                </div>
+                <hr>
+            </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped dtTable">
+                        <thead>
+                            <tr>
+                                <th>JR</th>
+                                <th>AT</th>
+                                <th>SMT</th>
+                                <th>OSH</th>
+                                <th>NRH</th>
+                                <th>EW</th>
+                                <th>Ev</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+        </div>
+    </div>
+{% endblock %}
+

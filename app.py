@@ -167,7 +167,7 @@ def history():
 
 
 
-@app.route('/predpred')
+@app.route('/predict', methods=['GET'])
 def predpred():
     if request.method == 'GET':
         if 'user_id' not in session:
@@ -175,10 +175,7 @@ def predpred():
     cursor.execute('SELECT * FROM auth WHERE user_id=%s', (session['user_id']))
     user = cursor.fetchone()
     name = user[3]
-    return render_template('as.html', title=name, name=name)
-
-
-
+    return render_template('predict.html', title=name, name=name)
 
 
 @app.route('/predict',methods=['POST'])
@@ -190,7 +187,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('as.html', prediction_text='Sales should be $ {}'.format(output))
+    return render_template('predict.html', prediction_text='Sales should be $ {}'.format(output))
 
 
 

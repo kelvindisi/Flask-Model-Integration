@@ -1,39 +1,25 @@
-{% extends 'layout.html' %} {% block title %}
-<h1>Home</h1>{% endblock %} {% block content %}
-<div class="container">
-    <div class="col-md-8">
-        <h3>Welcome, {{email}}</h3>
-    </div>
-    <div class="col-md-4 text-right">
-        <a href="{{url_for('home')}}">Home</a>   
-    </div>  <div class="col-md-4 text-right">
-        <a href="{{url_for('profile')}}">Account</a>   
-    </div> <div class="col-md-4 text-right">
-        <a href="{{url_for('logout')}}">logout</a>
-    </div>
-</div><!-- /container -->
-<hr />
-<link rel="stylesheet" href="{{ url_for('static', filename='card.css') }}">
+{% extends 'logged_user_layout.html' %}
 
-<body>
-    <div>
-        <h1>Account Settings</h1>
+{% block content %}
+    <form action="{{ url_for('profileupdate') }}" class="medium-form mt-3 align-form-center" method="post">
+        <div class="mb-2">
+            <label for="email" class="fw-bold">Email</label>
+            <input type="email" name="email" id="email" placeholder="johndoe@domain.com"
+                   required="required" class="form-control disabled" value="{{ email }}">
+        </div>
+        <div class="mb-2">
+            <label for="name" class="fw-bold">Name</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="John Doe"
+                   required="required" value="{{ name }}">
+        </div>
+        <div class="mb-2">
+            <label for="phone" class="fw-bold">Phone Number</label>
+            <input type="tel" name="phone" id="phone" class="form-control" placeholder="254719600741"
+                   required="required" value="{{ phone }}">
+        </div>
+        <div class="mb-2">
+            <button class="btn btn-success">Update Changes</button>
+        </div>
+    </form>
 
-        <!-- Main Input For Receiving Query to our ML -->
-        <form action="{{ url_for('profileupdate')}}" method="post">
-            <input type="text" name="email" placeholder="Email" required="required" readonly="readonly" value="{{email}}"/><br>
-            <input type="text" name="name" placeholder="John Does" required="required" value="{{name}}"/><br>
-            <input type="text" name="phone" placeholder="+254700000000" required="required" value="{{phone}}"/><br> 
-
-
-            <button type="submit" class="btn btn-primary btn-block btn-large">Update Changes</button>
-        </form>
-
-        <br>
-        <br>
- 
-    </div>
-
-
-</body>
 {% endblock %}

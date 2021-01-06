@@ -1,24 +1,8 @@
-{% extends 'layout.html' %} {% block title %}
-<h1>Home</h1>{% endblock %} {% block content %}
-<div class="container">
-    <div class="col-md-4 text-right">
-        <a href="{{url_for('home')}}">Home</a>   
-    </div>  <div class="col-md-4 text-right">
-        <a href="{{url_for('profile')}}">Account</a>   
-    </div> 
-    <div class="col-md-8">
-        <h3>Welcome, {{name}}</h3>
-    </div>
-    <div class="col-md-4 text-right">
-        <a href="{{url_for('logout')}}">logout</a>
-    </div>
-    <a href="{{url_for('predpred')}}">   <button class="btn btn-lg btn-primary btn-block btn-signin" >Predict
-    </button></a>
-    <BR>
-    </BR>
-        <a href="{{url_for('history')}}">   <button class="btn btn-lg btn-primary btn-block btn-signin" >History
-    </button></a>
-</div><!-- /container -->
+{% extends 'logged_user_layout.html' %}
+
+{% block content %}
+    This should go to parent container
+    {% include 'dashboard.html' %}
 {% endblock %}
 
  

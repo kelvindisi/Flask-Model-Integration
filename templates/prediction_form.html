@@ -1,0 +1,40 @@
+<form action="{{ url_for('predict') }}" method="post" class="predictionForm">
+    <div class="mb-2">
+        <label for="rain" class="fw-bold">July Rain(mm)</label>
+        <input type="number" id="rain" name="julyrain" class="form-control"
+               placeholder="example 60.55" required="required">
+    </div>
+    <div class="mb-2">
+        <label for="augTemp" class="fw-bold">August Temperature</label>
+        <input type="number" name="augtemp" id="augTemp" class="form-control"
+               placeholder="example 50.4" required="required">
+    </div>
+    <div class="mb-2">
+        <label for="septMin" class="fw-bold">September Minimum Temperature</label>
+        <input type="number" class="form-control" id="septMin" name="Septmin"
+               placeholder="example 12" required="required">
+    </div>
+    <div class="mb-2">
+        <label for="octSunshine" class="fw-bold">October Sunshine in Hours</label>
+        <input type="number" class="form-control" id="octSunshine" name="octsunshine"
+               placeholder="example 76" required="required">
+    </div>
+    <div class="mb-2">
+        <label for="novHumidity" class="fw-bold">November Relative Humidity</label>
+        <input type="number" id="novHumidity" class="form-control" name="NovHumidity"
+               placeholder="example 34" required="required">
+    </div>
+    <div class="mb-2">
+        <label for="excessWater">Excess Water (mm)</label>
+        <input type="number" name="ExcessWater" id="excessWater" class="form-control"
+               placeholder="example 17" required="required">
+    </div>
+    <div class="mb-2">
+        <label for="Evasportanspiration" class="fw-bold">Evasportanspiration (mm)</label>
+        <input type="number" name="Evasportanspiration" id="Evasportanspiration" class="form-control"
+               placeholder="example 34" required="required">
+    </div>
+    <div class="mb-2">
+        <button type="submit" class="btn btn-primary">Predict Yield</button>
+    </div>
+</form>
